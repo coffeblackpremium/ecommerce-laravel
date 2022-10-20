@@ -2,7 +2,6 @@
 <template>
     <li v-for="key in info">
         <h1>{{key.image}}</h1>
-        <img :src="{{key.image}}"height="500" width="500" />
     </li>
     
 </template>
@@ -22,11 +21,6 @@ export default {
         .then(response => (this.info = response.data))
         .catch(error => console.log(error))
     },
-    methods: {
-        getImage = (image_url) => {
-
-        }
-    }
 }
 
 </script>
