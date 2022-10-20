@@ -30,8 +30,6 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::resource('stores', StoreController::class)
-    ->only(['index'])
-    ->middleware(['auth', 'verified']);
+Route::get('/stores', [StoreController::class, 'index']);
 
 require __DIR__.'/auth.php';
