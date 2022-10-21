@@ -5,12 +5,16 @@
         <div class="flex flex-row flex-wrap justify-center mx-auto">
             <li v-for="key in info" class="px-4 box-border list-none">
                <div class="shadow-sm mx-5 mt-5 py-3 border rounded-lg">
-                
-                <a href="#">
-                    <img :src="key.image" :style="{width: `150px`, height: `150px`}" class="px-4 "/>
-                </a>
-                   <span class="ml-3">Produto:</span>
-                   <span><strong> R$:{{key.price}} </strong></span>
+                <div class="px-5">
+                    <a href="#" class="">
+                        <img :src="key.image" :style="{width: `150px`, height: `150px`}" class="px-4"/>
+                    </a>
+                </div>
+                <div class="w-48 text-center px-6 py-6">
+                    <span class="ml-3">{{key.title}}:</span>
+                    <span><strong> R$:{{key.price}} </strong></span>
+
+                </div>
                </div> 
             </li>
         </div>
