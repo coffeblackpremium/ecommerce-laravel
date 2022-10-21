@@ -1,6 +1,8 @@
 
 <template>
+    <Head title="Loja Laravel" />
     <Navbar></Navbar>
+    <Search class="mt-10"></Search>
     <div class="container mx-auto px-4 mt-9">
         <div class="flex flex-row flex-wrap justify-center mx-auto">
             <li v-for="key in info" class="px-4 box-border list-none">
@@ -24,10 +26,11 @@
     
 </template>
 
-
 <script>
 import axios from 'axios'
-import Navbar from '@/Components/Store/NavbarComponent.vue';
+import Navbar from '@/Components/Store/NavbarComponent.vue'
+import Search from '@/Components/Store/SearchComponent.vue'
+import { Head } from '@inertiajs/inertia-vue3'
 
 export default {
     data(){
@@ -42,8 +45,13 @@ export default {
         .catch(error => console.log(error))
     },
     components: {
-        Navbar
-    }
+        Navbar, Head, Search
+    },
+    name: 'Home',
+    metaInfo: {
+        title: "Loja Laravel",
+        titleTemplate: "$s | My Awesome webApp"
+    },
 }
 
 </script>

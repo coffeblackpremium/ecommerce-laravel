@@ -11,7 +11,7 @@ class StoreController extends Controller
     public function index()
     {
         $apiInformation = ApiFakeStore::get('/posts');
-        return Inertia::render('Store/StoreTeste',
+        return Inertia::render('Store/Store',
          ['apiInformation' => $apiInformation]);
     }
 }
