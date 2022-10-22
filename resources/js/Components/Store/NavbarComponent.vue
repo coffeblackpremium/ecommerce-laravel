@@ -1,5 +1,11 @@
-<script setup>
-
+<script>
+export default {
+    data() {
+        return {
+            numberChart: String
+        }
+    }
+}
 
 
 </script>
@@ -11,7 +17,9 @@
             <a href="#home" class="text-2xl no-underline text-grey-darkest hover:text-blue-dark">Home</a>
         </div>
         <div class="mb-2 sm:mb-0">
-            <a href="#carrinho" class="text-xl no-underline text-grey-darkest hover:text-blue-dark"><i class="fa-solid fa-cart-shopping"></i>
+            <a href="#carrinho" class="text-xl no-underline text-grey-darkest hover:text-blue-dark">
+                <span id="numberChart" class="float mb-10"></span>
+                <i class="fa-solid fa-cart-shopping"></i>
                 Carrinho</a>
         </div>
     </nav>

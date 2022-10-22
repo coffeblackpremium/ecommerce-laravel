@@ -50,7 +50,7 @@ export default {
     name: 'Home',
     metaInfo: {
         title: "Loja Laravel",
-        titleTemplate: "$s | My Awesome webApp"
+        titleTemplate: "%s | My Awesome webApp"
     },
 }
 
