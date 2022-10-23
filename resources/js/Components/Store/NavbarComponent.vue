@@ -4,7 +4,8 @@ export default {
         return {
             numberChart: String
         }
-    }
+    
+    },
 }
 
 
@@ -18,7 +19,7 @@ export default {
         </div>
         <div class="mb-2 sm:mb-0">
             <a href="#carrinho" class="text-xl no-underline text-grey-darkest hover:text-blue-dark">
-                <span id="numberChart" class="float mb-10"></span>
+                <span id="numberChart" class="float mb-10" @change=""></span>
                 <i class="fa-solid fa-cart-shopping"></i>
                 Carrinho</a>
         </div>

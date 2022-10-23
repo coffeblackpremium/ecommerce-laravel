@@ -1,7 +1,9 @@
 
 <template>
     <Head title="Loja Laravel" />
-    <Navbar></Navbar>
+    <Navbar>
+        @AddToCart="addToCart()"
+    </Navbar>
     <Search class="mt-10"></Search>
     <div class="container mx-auto px-4 mt-9">
         <div class="flex flex-row flex-wrap justify-center mx-auto">
@@ -12,10 +14,19 @@
                         <img :src="key.image" :style="{width: `150px`, height: `150px`}" class="px-4"/>
                     </a>
                 </div>
-                <div class="w-48 text-center px-6 py-6">
-                    <span class="ml-3">{{key.title}}:</span>
+                <div class="w-48 text-center px-6 py-6" v-if="key.title.lenght > 20">
+                    <span class="ml-3">{{key.title.substring(0,30)}}:....</span>
                     <span><strong> R$:{{key.price}} </strong></span>
-
+                </div>
+                <div class="w-48 text-center px-6 py-6" v-else>
+                    <span class="ml-3">{{key.title.substring(0,20)}}:</span>
+                    <span><strong> R$:{{key.price}} </strong></span>
+                </div>
+                <div class="flex justify-start px-4">
+                    <button @click="addToCart()" class="btn bg-green-500 hover:bg-green-700 text-white font-bold px-4 py-2 rounded">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        +
+                    </button>
                 </div>
                </div> 
             </li>
@@ -31,11 +42,12 @@ import axios from 'axios'
 import Navbar from '@/Components/Store/NavbarComponent.vue'
 import Search from '@/Components/Store/SearchComponent.vue'
 import { Head } from '@inertiajs/inertia-vue3'
+import NavbarComponentVue from '@/Components/Store/NavbarComponent.vue'
 
 export default {
     data(){
         return {
-            info: null
+            info: null,
         }
     },
     mounted () {
@@ -52,6 +64,14 @@ export default {
         title: "Loja Laravel",
         titleTemplate: "%s | My Awesome webApp"
     },
+    methods: {
+        getId(data){
+            this.id = data
+        },
+        addToCart() {
+            this.data.value += 1
+        }
+    }
 }
 
 </script>
