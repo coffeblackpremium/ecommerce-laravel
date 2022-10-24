@@ -1,8 +1,7 @@
 
 <template>
     <Head title="Loja Laravel" />
-    <Navbar>
-        @AddToCart="addToCart()"
+    <Navbar :numberChart="numberChart">
     </Navbar>
     <Search class="mt-10"></Search>
     <div class="container mx-auto px-4 mt-9">
@@ -48,6 +47,7 @@ export default {
     data(){
         return {
             info: null,
+            numberChart: 0
         }
     },
     mounted () {
@@ -69,7 +69,7 @@ export default {
             this.id = data
         },
         addToCart() {
-            this.data.value += 1
+            this.numberChart += 1
         }
     }
 }
