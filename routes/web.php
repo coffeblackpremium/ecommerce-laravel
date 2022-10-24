@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChartController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -32,6 +33,10 @@ Route::get('/dashboard', function () {
 
 Route::controller(StoreController::class)->group(function () {
     Route::get('/stores', [StoreController::class, 'index']);
+});
+Route::controller(ChartController::class)->group(function(){
+    
+    Route::get('/chart', [ChartController::class, 'index']);
 });
 
 require __DIR__.'/auth.php';

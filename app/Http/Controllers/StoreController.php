@@ -14,4 +14,9 @@ class StoreController extends Controller
         return Inertia::render('Store/Store',
          ['apiInformation' => $apiInformation]);
     }
+
+    public function show()
+    {
+        return Inertia::render('Store/ChartStore');
+    }
 }
