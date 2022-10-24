@@ -9,6 +9,7 @@ class ChartController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Store/ChartStore');
+        return Inertia::render('Store/ChartStore', 
+        []);
     }
 }
