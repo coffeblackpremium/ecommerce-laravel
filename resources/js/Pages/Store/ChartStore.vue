@@ -1,5 +1,6 @@
 
 <template>
+    <Head title="Carrinho"></Head>
     <Navbar></Navbar>
     <Search class="py-12"></Search>
     <div class="overflow-x-auto flex justify-center">
@@ -35,6 +36,7 @@
 <script>
 import Navbar from '@/Components/Store/NavbarComponent.vue'
 import Search from '@/Components/Store/SearchComponent.vue'
+import { Head } from '@inertiajs/inertia-vue3'
 export default {
     data () {
         return {
@@ -42,7 +44,11 @@ export default {
         }
     },
     components: {
-        Navbar, Search
+        Navbar, Search, Head
+    },
+    metaInfo: {
+        title: "Carrinho Laravel",
+        titleTemplate: "%S | Meu Aplicativo foda",
     }
 }
 </script>

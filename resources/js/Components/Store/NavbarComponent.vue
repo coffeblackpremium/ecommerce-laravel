@@ -1,12 +1,15 @@
 
 <template>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <nav class="font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-4 px-6 bg-white
     shadow sm:items-baseline w-full">
         <div class="mb-2 sm:mb-0">
-            <a href="#home" class="text-2xl no-underline text-grey-darkest hover:text-blue-dark">Home</a>
+            <a :href="storeRoute" class="text-2xl no-underline text-grey-darkest hover:text-blue-dark">Home</a>
         </div>
         <div class="mb-2 sm:mb-0">
-            <a href="#carrinho" class="text-xl no-underline text-grey-darkest hover:text-blue-dark">
+            <a :href="chartRoute" class="text-xl no-underline text-grey-darkest hover:text-blue-dark">
                 <span id="numberChart" class="float mb-10">{{numberChart}}</span>
                 <i class="fa-solid fa-cart-shopping"></i>
                 Carrinho</a>
@@ -18,9 +21,9 @@
     export default {
         data() {
             return {
-                
+                storeRoute: route('store'),
+                chartRoute: route('chart'),
             }
-        
         },
         props: {
             numberChart: 0

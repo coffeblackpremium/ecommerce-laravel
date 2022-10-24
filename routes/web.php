@@ -32,11 +32,11 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::controller(StoreController::class)->group(function () {
-    Route::get('/stores', [StoreController::class, 'index']);
+    Route::get('/stores', [StoreController::class, 'index'])->name('store');
 });
 Route::controller(ChartController::class)->group(function(){
     
-    Route::get('/chart', [ChartController::class, 'index']);
+    Route::get('/chart', [ChartController::class, 'index'])->name('chart');
 });
 
 require __DIR__.'/auth.php';
