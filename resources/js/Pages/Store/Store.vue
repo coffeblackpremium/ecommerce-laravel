@@ -1,12 +1,13 @@
 
 <template>
     <Head title="Loja Laravel" />
-    <Navbar :numberChart="numberChart">
+    <Navbar>
     </Navbar>
     <Search class="mt-10"></Search>
     <div class="container mx-auto px-4 mt-9">
         <div class="flex flex-row flex-wrap justify-center mx-auto">
-            <li v-for="key in info" class="px-4 box-border list-none">
+            <!-- {{ apiInformation }} -->
+            <li v-for="key in apiInformation" class="px-4 box-border list-none">
                <div class="shadow-sm mx-5 mt-5 py-3 border rounded-lg">
                 <div class="px-5">
                     <a href="#" class="">
@@ -39,19 +40,11 @@ import Navbar from '@/Components/Store/NavbarComponent.vue'
 import Search from '@/Components/Store/SearchComponent.vue'
 import { Head } from '@inertiajs/inertia-vue3'
 import NavbarComponentVue from '@/Components/Store/NavbarComponent.vue'
+import { defineComponent } from 'vue'
 
-export default {
-    data(){
-        return {
-            info: null,
-            numberChart: 0
-        }
-    },
-    mounted () {
-        axios
-        .get('https://fakestoreapi.com/products')
-        .then(response => (this.info = response.data))
-        .catch(error => console.log(error))
+export default defineComponent({
+    props: {
+        apiInformation: Array,
     },
     components: {
         Navbar, Head, Search
@@ -68,7 +61,47 @@ export default {
         addToCart() {
             this.numberChart += 1
         }
-    }
-}
+    },
+    mounted() {
+        console.log(this.apiInformation);
+    },
+
+})
+// export default {
+//     data(){
+//         return {
+//             info: null,
+//             numberChart: 0,
+//         }
+//     },
+    // mounted () {
+    //     axios
+    //     .get('https://fakestoreapi.com/products')
+    //     .then(response => (this.info = response.data))
+    //     .catch(error => console.log(error))
+    // },
+    // components: {
+    //     Navbar, Head, Search
+    // },
+    // name: 'Home',
+    // metaInfo: {
+    //     title: "Loja Laravel",
+    //     titleTemplate: "%s | My Awesome webApp"
+    // },
+    // methods: {
+    //     getId(data){
+    //         this.id = data
+    //     },
+    //     addToCart() {
+    //         this.numberChart += 1
+    //     }
+    // },
+    // mounted() {
+    //     console.log(this.apiInformation);
+    // },
+//     props: {
+//         apiInformation: Object
+//     }
+// }
 
 </script>
