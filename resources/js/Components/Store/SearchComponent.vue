@@ -7,7 +7,7 @@
                 <input type="search" class="form-control relative flex-auto win-w-0 block w-ful 
                 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid
                 border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:border-blue-600
-                focus:outline-none" 
+                focus:outline-none"
                 placeholder="Procurar..." arial-label="Search" aria-describedby="button-addon2"/>
                 <span class="input-group-text flex items-center px-3 py-1.5 text-base font-normal text-gray-700 text-center whitespace-nowrap rounded" id="basic-addon2">
                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="w-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -26,7 +26,7 @@ export default {
         return {
             
         }
-    }
+    },
 }
 
 
