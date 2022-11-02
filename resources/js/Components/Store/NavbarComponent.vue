@@ -10,7 +10,7 @@
         </div>
         <div class="mb-2 sm:mb-0">
             <a :href="chartRoute" class="text-xl no-underline text-grey-darkest hover:text-blue-dark">
-                <span id="numberChart" class="float mb-10">{{numberChart}}</span>
+                <span id="numberChart" class="float mb-10">{{numberCart}}</span>
                 <i class="fa-solid fa-cart-shopping"></i>
                 Carrinho</a>
         </div>
@@ -26,7 +26,7 @@
             }
         },
         props: {
-            numberChart: 0
+            numberCart: 0
         }
     }
     

@@ -1,7 +1,7 @@
 
 <template>
     <Head title="Loja Laravel" />
-    <Navbar>
+    <Navbar :numberCart="numberCart">
     </Navbar>
     <!-- <Search class="mt-10" v-model="search" ></Search> -->
     <div class="flex justify-center">
@@ -67,7 +67,8 @@ export default defineComponent({
     data () {
         return {
             search: '',
-            items: this.apiInformation
+            items: this.apiInformation,
+            numberCart: 0
         }
     },
     computed: {
@@ -83,7 +84,7 @@ export default defineComponent({
     },
     methods: {
         addToCart() {
-            this.numberChart += 1
+            this.numberCart += 1
         },
     },
     mounted() {
