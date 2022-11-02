@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ChartController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -32,11 +33,11 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::controller(StoreController::class)->group(function () {
-    Route::get('/stores', [StoreController::class, 'index'])->name('store');
+    Route::get('/', [StoreController::class, 'index'])->name('shop');
 });
-Route::controller(ChartController::class)->group(function(){
+Route::controller(CartController::class)->group(function(){
     
-    Route::get('/chart', [ChartController::class, 'index'])->name('chart');
+    Route::get('/carrinho', [CartController::class, 'index'])->name('cart');
 });
 
 require __DIR__.'/auth.php';

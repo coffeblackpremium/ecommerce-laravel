@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class ChartController extends Controller
+class CartController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Store/ChartStore', 
+        return Inertia::render('Shop/Cart', 
         []);
     }
 }

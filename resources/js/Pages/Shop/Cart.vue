@@ -34,8 +34,8 @@
 </template>
 
 <script>
-import Navbar from '@/Components/Store/NavbarComponent.vue'
-import Search from '@/Components/Store/SearchComponent.vue'
+import Navbar from '@/Components/Shop/NavbarComponent.vue'
+import Search from '@/Components/Shop/SearchComponent.vue'
 import { Head } from '@inertiajs/inertia-vue3'
 export default {
     data () {

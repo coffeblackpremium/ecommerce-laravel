@@ -6,10 +6,10 @@
     <nav class="font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-4 px-6 bg-white
     shadow sm:items-baseline w-full">
         <div class="mb-2 sm:mb-0">
-            <a :href="storeRoute" class="text-2xl no-underline text-grey-darkest hover:text-blue-dark">Home</a>
+            <a :href="shopRoute" class="text-2xl no-underline text-grey-darkest hover:text-blue-dark">Home</a>
         </div>
         <div class="mb-2 sm:mb-0">
-            <a :href="chartRoute" class="text-xl no-underline text-grey-darkest hover:text-blue-dark">
+            <a :href="CartRoute" class="text-xl no-underline text-grey-darkest hover:text-blue-dark">
                 <span id="numberChart" class="float mb-10">{{numberCart}}</span>
                 <i class="fa-solid fa-cart-shopping"></i>
                 Carrinho</a>
@@ -21,8 +21,8 @@
     export default {
         data() {
             return {
-                storeRoute: route('store'),
-                chartRoute: route('chart'),
+                shopRoute: route('shop'),
+                CartRoute: route('cart'),
             }
         },
         props: {

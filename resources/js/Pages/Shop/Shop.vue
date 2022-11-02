@@ -40,7 +40,7 @@
                             <span><strong> R$:{{key.price}} </strong></span>
                         </div>
                         <div class="flex justify-start px-4">
-                            <button @click="addToCart()" class="btn bg-green-500 hover:bg-green-700 text-white font-bold px-4 py-2 rounded">
+                            <button @click="addToCart(key.title, key.price)" class="btn bg-green-500 hover:bg-green-700 text-white font-bold px-4 py-2 rounded">
                                 <i class="fa-solid fa-cart-shopping"></i>
                                 +
                             </button>
@@ -54,10 +54,10 @@
 </template>
 
 <script>
-import Navbar from '@/Components/Store/NavbarComponent.vue'
-import Search from '@/Components/Store/SearchComponent.vue'
+import Navbar from '@/Components/Shop/NavbarComponent.vue'
+import Search from '@/Components/Shop/SearchComponent.vue'
 import { Head } from '@inertiajs/inertia-vue3'
-import NavbarComponentVue from '@/Components/Store/NavbarComponent.vue'
+import NavbarComponentVue from '@/Components/Shop/NavbarComponent.vue'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
@@ -68,7 +68,8 @@ export default defineComponent({
         return {
             search: '',
             items: this.apiInformation,
-            numberCart: 0
+            numberCart: 0,
+            cart: []
         }
     },
     computed: {
@@ -83,8 +84,25 @@ export default defineComponent({
         }
     },
     methods: {
-        addToCart() {
+        addToCart(itemName, itemPrice) {
             this.numberCart += 1
+        
+            const index = this.cart.findIndex(item => item.name === itemName)
+            console.log(index)
+            if(index != -1 ){
+                this.cart.map(item => {
+                    if(item.name == itemName){
+                        item.quantity += 1
+                    }
+                })
+            }else {
+                this.cart.push({
+                    name: itemName,
+                    price: itemPrice,
+                    quantity: 0
+                })
+            }
+            
         },
     },
     mounted() {
