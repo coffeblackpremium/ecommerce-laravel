@@ -1,12 +1,8 @@
 <?php
 
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\ChartController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-
-use App\Http\Controllers\StoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,16 +24,12 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::controller(StoreController::class)->group(function () {
-    Route::get('/', [StoreController::class, 'index'])->name('shop');
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return Inertia::render('Dashboard');
+    })->name('dashboard');
 });
-Route::controller(CartController::class)->group(function(){
-    Route::get('/carrinho', [CartController::class, 'index'])->name('cart.index');
-    Route::post('/carrinho', [CartController::class, 'store'])->name('cart.store');
-});
-
-require __DIR__.'/auth.php';
