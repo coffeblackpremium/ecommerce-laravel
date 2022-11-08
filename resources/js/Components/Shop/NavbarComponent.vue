@@ -12,7 +12,8 @@
             <a :href="CartRoute" class="text-xl no-underline text-grey-darkest hover:text-blue-dark">
                 <span id="numberChart" class="float mb-10">{{numberCart}}</span>
                 <i class="fa-solid fa-cart-shopping"></i>
-                Carrinho</a>
+                Carrinho
+            </a>
         </div>
     </nav>
 </template>
