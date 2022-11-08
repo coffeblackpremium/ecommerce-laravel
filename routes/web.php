@@ -36,8 +36,8 @@ Route::controller(StoreController::class)->group(function () {
     Route::get('/', [StoreController::class, 'index'])->name('shop');
 });
 Route::controller(CartController::class)->group(function(){
-    
-    Route::get('/carrinho', [CartController::class, 'index'])->name('cart');
+    Route::get('/carrinho', [CartController::class, 'index'])->name('cart.index');
+    Route::post('/carrinho', [CartController::class, 'store'])->name('cart.store');
 });
 
 require __DIR__.'/auth.php';

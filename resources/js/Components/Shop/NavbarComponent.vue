@@ -22,7 +22,7 @@
         data() {
             return {
                 shopRoute: route('shop'),
-                CartRoute: route('cart'),
+                CartRoute: route('cart.index'),
             }
         },
         props: {
